@@ -9,6 +9,13 @@ output:
       in_header: otherloads/styles/rmarkdown-ppt-xju-red.tex
     latex_engine: xelatex
 classoption: "aspectratio=169"
+# 可选择以下模版
+# 1. rmarkdown-ppt-general-blue 
+# 2. rmarkdown-ppt-general-deepblue 
+# 3. rmarkdown-ppt-general-red 
+# 4. rmarkdown-ppt-xju-blue 
+# 5. rmarkdown-ppt-xju-deepblue 
+# 6. rmarkdown-ppt-xju-red
 ---
 
 

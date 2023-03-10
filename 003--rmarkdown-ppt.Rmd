@@ -1,0 +1,34 @@
+---
+title: "R markdown 和 CTeX 生成 pdf"
+author: "张金伟"
+date: "2021年10月28日"
+fontsize: 10pt
+output: 
+  beamer_presentation:
+    includes:
+      in_header: otherloads/styles/rmarkdown-ppt-xju-red.tex
+    latex_engine: xelatex
+classoption: "aspectratio=169"
+---
+
+
+# R Markdown 和 CTeX
+
+
+
+
+
+中文内容
+
+# 中文标题
+
+中文内容
+
+
+
+
+中文内容
+
+# 标题
+
+中文内容

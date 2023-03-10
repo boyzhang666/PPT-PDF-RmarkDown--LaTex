@@ -1,0 +1,157 @@
+% !Mode::”TeX:UTF 8”
+%===============================导言区===============================
+
+\documentclass{otherloads/styles/ppt-xju-blue}           
+
+
+\iffalse
+PPT可选择以下模板：
+1. ppt-xju-blue
+2. ppt-xju-deepblue
+3. ppt-general-blue
+4. ppt-general-deepblue
+5. ppt-xju-red
+6. ppt-general-red
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%此处以下为正式开始的内容%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+	\title[汇报标题]{\bf 汇报标题}
+	%\subtitle{\bf 利用已有模板实现自己的模板}
+	\author[张金伟]{张~金~伟}
+	\institute[新疆大学]
+		{
+			新疆大学 \\ \vspace*{0.1cm}
+			数学与系统科学学院
+		}
+		
+	\date{2021年12月5日}
+		
+		
+	
+%=============================标题页=====================================
+	
+	\begin{frame}
+		\maketitle
+		%\titlepage	
+	\end{frame}
+	
+%=============================PPT开始=====================================
+
+	\begin{frame}[t]{章节目录}
+		
+		\begin{spacing}{2.5}               %每条目录间矩为2.5
+			\begin{multicols}{2}           %目录显示为2栏
+				\tableofcontents%[hideallsubsections]
+			\end{multicols}
+		\end{spacing}
+
+	\end{frame}
+	
+	
+\section{标题1}
+	
+	\begin{frame}[t]{标题1}
+		
+		(1)	断剑重铸之日，骑士归来之时。\\[3pt]	
+		(2)断剑重铸之日，骑士归来之时。
+		
+	\end{frame}
+	
+	
+	
+
+\section{标题2}
+	
+	\begin{frame}[t]{标题2} 
+		
+		\begin{columns}
+			\column{0.4\textwidth}
+			且随疾风前行，身后亦须留心。
+			\column{0.4\textwidth}	
+			且随疾风前行，身后亦须留心。
+		\end{columns}
+
+	\end{frame}
+
+	
+	
+\section{标题3}
+		
+	\begin{frame}[t]{标题3}
+		
+		\begin{center}			
+			真正的大师，永远怀着一颗学徒的心。
+		\end{center}
+	
+	\end{frame}
+	
+	
+
+
+\section{标题4}
+
+	\begin{frame}[t]{标题4}{标题4.1}
+		
+		\begin{center}
+			时间不在于你拥有多少，而在于你怎样使用。
+		\end{center}
+		
+	\end{frame}
+	
+	
+	\begin{frame}[t]{标题4.2}
+		
+		假如生活欺骗了你，不要心焦，也不要烦恼。\\[6pt]
+		阴郁的日子里要心平气和，相信吧，那快乐的日子就来到。
+
+	\end{frame}
+	
+	
+
+
+	
+	\begin{frame}[t]{标题5}
+		
+		\begin{center}
+			\begin{tabular}{|c|c|c|}
+				\hline 序号&时间&内容\\
+				\hline 1&2021 年 8 月-2021 年 11 月&真正的大师，永远怀着一颗学徒的心。\\
+				\hline 2&2021 年 11 月-2022 年 3 月&真正的大师，永远怀着一颗学徒的心。\\
+				\hline 3&2022 年 3 月-2022 年 12 月&真正的大师，永远怀着一颗学徒的心。\\
+				\hline 4&2022 年 12 月-2023 年 1 月&真正的大师，永远怀着一颗学徒的心。\\
+				\hline 5&2023 年 2 月-2023 年 3 月&真正的大师，永远怀着一颗学徒的心。\\
+				\hline 6&2023 年 4 月-2023 年 5 月&真正的大师，永远怀着一颗学徒的心。\\
+				\hline 7&2023 年 5 月-2023 年 6 月 &真正的大师，永远怀着一颗学徒的心。\\
+				\hline
+			\end{tabular}
+		\end{center}
+	
+	\end{frame}
+	
+
+	
+	\begin{frame}[t]{部分参考文献}	
+		\begin{thebibliography}{99}
+			{\footnotesize
+				\bibitem[1]{bibc1} 没有人会陪你走一辈子，所以你要适应孤独。
+				
+				\bibitem[2]{bibc1} 没有人会陪你走一辈子，所以你要适应孤独。
+				
+				\bibitem[3]{bibc1} 没有人会陪你走一辈子，所以你要适应孤独。
+				
+				\bibitem[4]{bibc1} 没有人会陪你走一辈子，所以你要适应孤独。
+
+				\bibitem[5]{bibc1} 没有人会陪你走一辈子，所以你要适应孤独。
+				
+				\bibitem[6]{bibc1} 没有人会陪你走一辈子，所以你要适应孤独。
+			}
+		\end{thebibliography}	
+		
+	\end{frame}
+	
+
+	
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%这是正文部分的结束%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,226 @@
+
+% ============================个人自用文档样式============================
+
+\ProvidesPackage{settings/pdf-note-Packages}[2021/11/25-V2.0]
+
+\usepackage{amsmath, amsfonts, amssymb, amsthm}               %使用宏包{美国数学协会数学}
+\usepackage{graphicx}                                                             %使用此宏包可以插入图片
+\graphicspath{{figures/}}                                                           %图片所在的目录
+
+% 眉首眉脚
+\RequirePackage{fancyhdr}
+% 调色板
+\RequirePackage{xcolor-material}
+% 代码提示
+\RequirePackage{listings}
+% 版边边距
+\RequirePackage[left=2cm, right=2cm, bottom=2cm, headheight=14pt]{geometry}
+% 更加现代定理、引用提示
+\RequirePackage{tcolorbox}
+% 书签
+\RequirePackage[open, openlevel=2, atend]{bookmark}
+% 链接
+\RequirePackage{hyperref}
+
+%%% 自定义 %%%
+% 主色调
+\colorlet{PrimaryColor}{MaterialBlue900}
+
+%%% CTEX格式设置 %%%
+\ctexset{
+  today=big,
+  contentsname={文章导航},
+  section/format=\Large\bfseries\centering\color{PrimaryColor},
+  subsection/number={\textcolor{PrimaryColor}{\thesubsection}},
+}
+
+%%% 链接设置 %%%
+\hypersetup{
+  colorlinks=true,
+  linkcolor=MaterialPink,
+  urlcolor=MaterialBlue,
+  filecolor=MaterialGreen,
+}
+
+%%% 代码高亮设置 %%%
+\tcbuselibrary{listings}
+
+\lstset{
+  frame=single,
+  frameround=tttt,
+  framesep=1pt,
+  framextopmargin=6pt,
+  framexbottommargin=6pt,
+  tabsize=4,
+  breaklines=true,
+  upquote=true,
+  captionpos=b,
+  basicstyle=\footnotesize,
+  backgroundcolor=\color{MaterialBlue50},
+  rulecolor=\color{MaterialBlue},
+  identifierstyle=\color{MaterialBlue800},
+  commentstyle=\itshape\color{MaterialGrey600},
+  stringstyle=\bfseries\color{MaterialAmber800},
+  % 保留关键字
+  keywordstyle=[1]\bfseries\color{MaterialPurple700},
+  % 新类、新类型、新接口定义
+  keywordstyle=[2]\bfseries\color{MaterialTeal800},
+  % 原始类型
+  keywordstyle=[3]\bfseries\color{MaterialPink400},
+  % 模块
+  keywordstyle=[4]\bfseries\color{MaterialBlue900},
+  % 其他
+  keywordstyle=[5]\color{MaterialRed500},
+  numberstyle=\bfseries\color{MaterialGrey800},
+}
+
+% javascript语法定义
+\lstdefinelanguage{javascript}{
+  morekeywords=[1]{const, let, function, if, else, while, do, return, break, async, await, yield},
+  morekeywords=[2]{class, extends, super, constructor, static, this, new, get, set},
+  morekeywords=[3]{Array, Object, Number, NaN, null, undefined, Set, Buffer},
+  morekeywords=[4]{module, exports, require},
+  otherkeywords={=>},
+  sensitive=true,
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  morestring=[b]`,
+}
+\lstalias{js}{javascript}
+
+% rust语法定义
+\lstdefinelanguage{rust}{
+  morekeywords=[1]{const, let, mut, fn, unsafe, while, loop, if, else, \?, return, await, async},
+  morekeywords=[1]{as, dyn, Trait, impl, static, for},
+  morekeywords=[1]{break, continue, label},
+  morekeywords=[2]{trait, type, struct, newtype, enum, Self, self},
+  morekeywords=[3]{Vec, String, str, Box, Cell, Arc, Send, Sync, Error, Option, Result},
+  morekeywords=[4]{mod, use, crate, pub},
+  morekeywords=[5]{println!, dbg!, format!, panic!},
+  otherkeywords={::},
+  sensitive=true,
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[bd]",
+}
+\lstalias{rs}{rust}
+
+%%% 页眉页脚设置 %%%
+\pagestyle{fancy}
+\fancyhead[L]{\textcolor{PrimaryColor}{\leftmark}}
+%\fancyfoot[C]{\textcolor{PrimaryColor}{第\zhnumber{\thepage}页}}
+\fancyfoot[C]{\thepage}
+\fancyhead[R]{\textcolor{PrimaryColor}{\rightmark}}
+\renewcommand{\headrule}{\color{PrimaryColor}\hrule width\textwidth}
+
+%%% tcolorbox %%%
+\tcbuselibrary{theorems}
+\tcbuselibrary{skins}
+\tcbsetforeverylayer{enhanced}
+
+%%% 自定义命令 %%%
+% 下划线
+\providecommand\下划线[1]{%
+  \underline{#1}%
+}
+
+% 着重号
+\providecommand\着重[1]{%
+  \heiti{#1}%
+}
+
+% 内联代码，单一颜色
+\providecommand\代码[1]{%
+  {\ \ttfamily{\textcolor{MaterialPink}{#1}}}
+}
+
+%%% 自定义环境 %%%
+% 引用
+\newenvironment{引用}
+{\begin{quote}\kaishu\small}
+{\end{quote}}
+
+\tcolorboxenvironment{引用}{
+  blanker,
+  borderline west={1mm}{0pt}{MaterialGrey200}
+}
+
+% 定理
+\newtcbtheorem[number within=section]{定理}{定理}{
+  fonttitle=\heiti,
+  boxrule=0.1mm,
+  before upper={\parindent2em},
+  colback=MaterialGreen50,
+  colframe=MaterialGreen,
+  attach boxed title to top left={xshift=12pt, yshift*=-\tcboxedtitleheight/2},
+  boxed title style={colback=MaterialGreen}
+}{定理}
+
+% 结论
+\newtcbtheorem[number within=section]{结论}{结论}{
+  fonttitle=\heiti,
+  boxrule=0.1mm,
+  before upper={\parindent2em},
+  colback=MaterialTeal50,
+  colframe=MaterialTeal,
+  attach boxed title to top left={xshift=12pt, yshift*=-\tcboxedtitleheight/2},
+  boxed title style={colback=MaterialTeal}
+}{结论}
+
+% 命题
+\newtcbtheorem[number within=section]{命题}{命题}{
+  fonttitle=\heiti,
+  boxrule=0.1mm,
+  before upper={\parindent2em},
+  colback=MaterialBlueGrey50,
+  colframe=MaterialBlueGrey,
+  attach boxed title to top left={xshift=12pt, yshift*=-\tcboxedtitleheight/2},
+  boxed title style={colback=MaterialBlueGrey}
+}{命题}
+
+% 定义
+\newtcbtheorem[number within=section]{定义}{定义}{
+  fonttitle=\heiti,
+  boxrule=0.1mm,
+  colback=MaterialCyan50,
+  before upper={\parindent2em},
+  colframe=MaterialCyan,
+  attach boxed title to top left={xshift=12pt, yshift*=-\tcboxedtitleheight/2},
+  boxed title style={colback=MaterialCyan}
+}{定义}
+
+% 文本提示框
+\newtcolorbox{文本提示框}[1]{
+  skin=empty,
+  top=0pt,
+  bottom=0pt,
+  toprule=0pt,
+  bottomrule=0pt,
+  leftrule=0pt,
+  rightrule=0pt,
+  borderline west={2pt}{0pt}{#1},
+}
+
+% 提示
+\newenvironment{提示}
+{\begin{文本提示框}{MaterialBlue}
+      \textcolor{MaterialBlue}{\heiti{提示：}}
+}
+{\end{文本提示框}}
+
+% 提醒
+\newenvironment{提醒}
+{\begin{文本提示框}{MaterialDeepOrange}
+      \textcolor{MaterialDeepOrange}{\heiti{提醒：}}
+}
+{\end{文本提示框}}
+
+% 注意
+\newenvironment{注意}
+{\begin{文本提示框}{MaterialRed}
+      \textcolor{MaterialRed}{\heiti{注意：}}
+}
+{\end{文本提示框}}
+
